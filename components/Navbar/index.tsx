@@ -1,23 +1,32 @@
-import React from "react";
+import React, { FC } from "react";
 import { PropsWithChildren } from "react";
 import { Box } from "@fower/react";
 import { useMode } from "@fower/react";
-import { Moon, Sun } from "react-feather";
+import { Moon, Sun, Aperture } from "react-feather";
 import { keyframes } from "@fower/core";
+import { styled } from "@fower/styled";
+import Link from "next/link";
+
+const ApertureSVG: FC<{ className?: string }> = ({ className }) => (
+  <Aperture className={className} />
+);
+
+const AnimatedAperture = styled(ApertureSVG);
+
 const fadeIn = keyframes({
   from: {
     width: 0,
-    transform: "translateX(-160px)",
+    transform: "translateX(-244px)",
   },
 
   to: {
-    width: "160px",
+    width: "244px",
     transform: "translateX(0px)",
   },
 });
 const fadeOut = keyframes({
   "0%": {
-    width: "160px",
+    width: "244px",
     transform: "translateX(0px)",
     visibility: "visible",
   },
@@ -29,11 +38,11 @@ const fadeOut = keyframes({
   "100%": {
     visibility: "hidden",
     opacity: 0,
-    transform: "translateX(-160px)",
+    transform: "translateX(-244px)",
   },
 });
-import Link from "next/link";
-const NavbarButton: React.FunctionComponent<{ text: string }> = ({ text }) => {
+
+const NavbarButton: FC<{ text: string }> = ({ text }) => {
   return (
     <Box
       cursorPointer
@@ -51,10 +60,9 @@ const NavbarButton: React.FunctionComponent<{ text: string }> = ({ text }) => {
     </Box>
   );
 };
-
 export default function Navbar({
   isMenuHidden,
-}: { isMenuHidden: boolean } & PropsWithChildren<any>) {
+}: PropsWithChildren<{ isMenuHidden: boolean }>) {
   console.log(isMenuHidden);
   const { mode, setMode } = useMode();
   function toggleMode() {
@@ -72,7 +80,7 @@ export default function Navbar({
           : { animation: `${fadeOut} 400ms ease-in-out` }
       }
       minH="100vh"
-      w40
+      w60
       p4
       pt12
       text3XL
@@ -87,8 +95,17 @@ export default function Navbar({
       left0
       visibility={!isMenuHidden ? "visible" : "hidden"}
     >
-      <Box top6 absolute fontBold text5XL ml4>
-        Arnau Espin
+      <Box
+        top6
+        absolute
+        fontExtrabold
+        text6XL
+        ml4
+        gray800
+        flex
+        alignItems="flex-end"
+      >
+        Arnau Espin <AnimatedAperture mb6 mr4 w11 animateSpin />
       </Box>
       <Box textLeft visibility={!isMenuHidden ? "visible" : "hidden"}>
         {/* <NavbarButton text="About" /> */}

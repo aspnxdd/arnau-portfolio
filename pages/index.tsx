@@ -45,6 +45,7 @@ composeAtom("text-link", {
   "gap-1rem": true,
   "white--dark": true,
   "red300--hover--dark": true,
+  "cursorPointer":true
 });
 
 interface Project {
@@ -62,7 +63,16 @@ const ProjectWindow: FC<Project> = ({
   tags,
   github,
 }) => {
-  if (name)
+  const scrollToBottom = () =>{ 
+    window.scrollTo({ 
+      top: document.documentElement.scrollHeight, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour 
+         in place of 'smooth' */
+    }); 
+  }; 
+  if (name){
+  scrollToBottom();
     return (
       <Box
         w-24rem--md
@@ -102,7 +112,7 @@ const ProjectWindow: FC<Project> = ({
           ))}
         </Box>
       </Box>
-    );
+    )}
   else {
     return <></>;
   }
@@ -143,7 +153,6 @@ const Home: NextPage = () => {
       gap-4rem
       bg--dark="hsl(226, 23%, 11%)"
       white--dark
-      cursorPointer
     >
       <Box gray800 text4XL white--dark animateBounce >
         {route === "/" ? "/about" : route }

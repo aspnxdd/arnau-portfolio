@@ -18,7 +18,7 @@ const fadeIn = keyframes({
 });
 const moveIn = keyframes({
   from: {
-    transform: "translateX(-160px)",
+    transform: "translateX(-244px)",
   },
 
   to: {
@@ -27,7 +27,7 @@ const moveIn = keyframes({
 });
 const moveOut = keyframes({
   from: {
-    transform: "translateX(160px)",
+    transform: "translateX(244px)",
   },
 
   to: {
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         red300--hover--dark
         style={
           !isMenuHidden
-            ? { marginLeft: "10rem", animation: `${moveIn} 400ms ease-in-out` }
+            ? { marginLeft: "244px", animation: `${moveIn} 400ms ease-in-out` }
             : { marginLeft: "0rem", animation: `${moveOut} 400ms ease-in-out` }
         }
         onClick={() => setMenu(!isMenuHidden)}
@@ -76,7 +76,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         h="100%"
         style={
           !isMenuHidden
-            ? { marginLeft: "10rem", animation: `${moveIn} 400ms ease-in-out` }
+            ? { marginLeft: "244px", animation: `${moveIn} 400ms ease-in-out` }
             : { marginLeft: "0rem", animation: `${moveOut} 400ms ease-in-out` }
         }
       >
