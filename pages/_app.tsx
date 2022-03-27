@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Navbar from "components/Navbar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "react-feather";
+import {isMobile} from 'react-device-detect';
 
 import { Box } from "@fower/react";
 
@@ -36,8 +37,13 @@ const moveOut = keyframes({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isMenuHidden, setMenu] = useState(false);
+  const [isMenuHidden, setMenu] = useState(true);
 
+  useEffect(() => {
+    if (!isMobile) {
+      setMenu(false);
+    }
+  }, [])
   return (
     <Box
       overflowHidden
