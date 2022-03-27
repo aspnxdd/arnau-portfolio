@@ -121,18 +121,18 @@ const Home: NextPage = () => {
     github: "",
     tags: [],
   });
-  const scrollToBottom = () =>{ 
+  const scrollToBottom = () => { 
     window.scrollTo({ 
       top: document.documentElement.scrollHeight, 
       behavior: 'smooth'
 
     }); 
   }; 
+
   useEffect(() => {
-     scrollToBottom();
-    
-  
+    if(projectSelected.name) scrollToBottom();
   }, [projectSelected])
+
   return (
     <>
     <Head>
