@@ -15,6 +15,9 @@ import { composeAtom } from "@fower/core";
 import { useState, FC } from "react";
 import { styled } from "@fower/styled";
 import { keyframes } from "@fower/core";
+import Head from 'next/head'
+
+
 const fadeIn = keyframes({
   from: {
     opacity: 0,
@@ -116,6 +119,13 @@ const Home: NextPage = () => {
     tags: [],
   });
   return (
+    <>
+    <Head>
+      <title>Arnau Espin</title>
+
+     
+      </Head>
+   
     <Box
       flex
       column
@@ -128,6 +138,7 @@ const Home: NextPage = () => {
       pl44--md
       pl4
       pt12
+      pb4
       fontBold
       gap-4rem
       bg--dark="hsl(226, 23%, 11%)"
@@ -262,6 +273,7 @@ const Home: NextPage = () => {
         </Box>
       </Box>
     </Box>
+    </>
   );
 };
 
