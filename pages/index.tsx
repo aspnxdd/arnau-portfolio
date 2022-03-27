@@ -12,7 +12,7 @@ import {
   Tool
 } from "react-feather";
 import { composeAtom } from "@fower/core";
-import { useState, FC } from "react";
+import { useState, FC, useEffect } from "react";
 import { styled } from "@fower/styled";
 import { keyframes } from "@fower/core";
 import Head from 'next/head'
@@ -63,16 +63,9 @@ const ProjectWindow: FC<Project> = ({
   tags,
   github,
 }) => {
-  const scrollToBottom = () =>{ 
-    window.scrollTo({ 
-      top: document.documentElement.scrollHeight, 
-      behavior: 'smooth'
-      /* you can also use 'auto' behaviour 
-         in place of 'smooth' */
-    }); 
-  }; 
+  
   if (name){
-  scrollToBottom();
+  
     return (
       <Box
         w-24rem--md
@@ -128,6 +121,18 @@ const Home: NextPage = () => {
     github: "",
     tags: [],
   });
+  const scrollToBottom = () =>{ 
+    window.scrollTo({ 
+      top: document.documentElement.scrollHeight, 
+      behavior: 'smooth'
+
+    }); 
+  }; 
+  useEffect(() => {
+     scrollToBottom();
+    
+  
+  }, [projectSelected])
   return (
     <>
     <Head>
@@ -147,7 +152,8 @@ const Home: NextPage = () => {
       minH="100vh"
       pl44--md
       pl4
-      pt12
+      pt12--md
+      pt20
       pb4
       fontBold
       gap-4rem
