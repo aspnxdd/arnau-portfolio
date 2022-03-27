@@ -30,7 +30,7 @@ const H2 = styled("h2");
 
 
 
-composeAtom("textLink", {
+composeAtom("text-link", {
   textLG: true,
   "mt-1rem": true,
   flex: true,
@@ -147,17 +147,17 @@ const Home: NextPage = () => {
         <Box flex column rowGap={20}>
           <Box gray800 text3XL flex column white--dark>
             Contact
-            <Box as="a" href="https://github.com/aspnxdd" textLink>
+            <Box as="a" href="https://github.com/aspnxdd" text-link>
               <GitHub /> Github
             </Box>
-            <Box as="a" href="mailto:arnauespin@gmail.com" textLink>
+            <Box as="a" href="mailto:arnauespin@gmail.com" text-link>
               <Mail />
               e-mail
             </Box>
             <Box
               as="a"
               href="https://www.linkedin.com/in/arnau-espin-23789980/"
-              textLink
+              text-link
             >
               <Linkedin />
               Linkedin
@@ -169,7 +169,7 @@ const Home: NextPage = () => {
               Projects
               <Box>
                 <Box
-                  textLink
+                  text-link
                   onClick={() =>
                     setProjectSelected({
                       name: "Solana NFT Floor Price",
@@ -191,7 +191,7 @@ const Home: NextPage = () => {
                   <Heart /> Solana NftFloorPrice
                 </Box>
                 <Box
-                  textLink
+                  text-link
                   onClick={() =>
                     setProjectSelected({
                       name: "Nft Floor Price API",
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
                   <Server /> Solana NftFloorPrice API (Rust)
                 </Box>
                 <Box
-                  textLink
+                  text-link
                   onClick={() =>
                     setProjectSelected({
                       name: "Hotel Simulator Solidity",
@@ -227,7 +227,7 @@ const Home: NextPage = () => {
                   Hotel Simulator Solidity
                 </Box>
                 <Box
-                  textLink
+                  text-link
                   onClick={() =>
                     setProjectSelected({
                       name: "Rust JSON extract macro",
