@@ -7,7 +7,7 @@ import { keyframes } from "@fower/core";
 import { styled } from "@fower/styled";
 import Link from "next/link";
 
-const ApertureSVG: FC<{ className?: string }> = ({ className }) => (
+const ApertureSVG: FC<Partial<{ className: string }>> = ({ className }) => (
   <Aperture className={className} />
 );
 
@@ -63,7 +63,6 @@ const NavbarButton: FC<{ text: string }> = ({ text }) => {
 export default function Navbar({
   isMenuHidden,
 }: PropsWithChildren<{ isMenuHidden: boolean }>) {
-  console.log(isMenuHidden);
   const { mode, setMode } = useMode();
   function toggleMode() {
     setMode(mode === "dark" ? "light" : "dark");
@@ -79,7 +78,7 @@ export default function Navbar({
           ? { animation: `${fadeIn} 400ms ease-in-out` }
           : { animation: `${fadeOut} 400ms ease-in-out` }
       }
-      minH="100vh"
+      h="100vh"
       w60
       p4
       pt12
