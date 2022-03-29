@@ -288,7 +288,7 @@ const Home: NextPage = () => {
                         internationalization projects by keeping an structure on the keys and translated values.
                       `,
                         tags: ["Electron", "TypeScript", "JsonDB","Styled Comp."],
-                        github: "https://github.com/aspnxdd/json-extract-macro",
+                        github: "https://github.com/aspnxdd/i18n-spin/",
                       })
                     }
                   >
