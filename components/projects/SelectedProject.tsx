@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { Project } from "../../misc/types";
+import type { Project } from "@/misc/types";
 
 import Image from "next/image";
 
@@ -13,7 +13,7 @@ const SelectedProject: FC<SelectedProjectProps> = ({ selectedProject }) => {
       <h2 className="text-3xl font-bold">{selectedProject.name}</h2>
       {selectedProject.image && (
         <Image
-          src={"/" + selectedProject.image}
+          src={`/${selectedProject.image}`}
           alt={selectedProject.name}
           width={800}
           height={800}
@@ -24,14 +24,14 @@ const SelectedProject: FC<SelectedProjectProps> = ({ selectedProject }) => {
       <div className="flex space-x-4">
         {selectedProject.github && (
           <a href={selectedProject.github} target="_blank" rel="noreferrer">
-            <button className="bg-sky-500 text-white rounded-md p-2 px-5 font-bold">
+            <button className="bg-sky-700 hover:bg-sky-600 ease-in-out duration-200 text-white rounded-md p-2 px-5 font-bold">
               Github
             </button>
           </a>
         )}
         {selectedProject.uri && (
           <a href={selectedProject.uri} target="_blank" rel="noreferrer">
-            <button className="bg-sky-500 text-white rounded-md p-2 px-5 font-bold">
+            <button className="bg-sky-700 hover:bg-sky-600 ease-in-out duration-200 text-white rounded-md p-2 px-5 font-bold">
               Website
             </button>
           </a>

@@ -1,10 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
-import type { Project } from "../misc/types";
+import type { Project } from "@/misc/types";
 
 import Head from "next/head";
 import { useState } from "react";
-import projects from "../misc/projects.json";
-import { ProjectList, SelectedProject } from "../components/projects";
+import projects from "@/misc/projects.json";
+import { ProjectList, SelectedProject } from "@/components/projects";
 
 export const getStaticProps: GetStaticProps<{
   projects: Project[];

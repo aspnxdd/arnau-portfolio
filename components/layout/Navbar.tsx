@@ -15,7 +15,7 @@ const Navbar: FC = () => {
           <li key={route}>
             <Link href={path}>
               <p
-                className={`text-xl relative w-max link ${
+                className={`text-xl font-bold relative w-max link ${
                   asPath === path ? "text-gray-300" : "text-gray-400"
                 }`}
               >
