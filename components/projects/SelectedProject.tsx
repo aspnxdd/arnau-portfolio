@@ -20,7 +20,7 @@ const SelectedProject: FC<SelectedProjectProps> = ({ selectedProject }) => {
           unoptimized={true}
         />
       )}
-      <p className="text-lg">{selectedProject.description}</p>
+      <p className="text-lg max-w-[70ch] font-semibold">{selectedProject.description}</p>
       <div className="flex space-x-4">
         {selectedProject.github && (
           <a href={selectedProject.github} target="_blank" rel="noreferrer">

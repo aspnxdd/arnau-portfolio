@@ -9,8 +9,8 @@ const Navbar: FC = () => {
   const { asPath } = useRouter();
 
   return (
-    <nav className="flex justify-between items-center h-16 relative shadow-sm p-10">
-      <ul className="flex items-center space-x-4 text-xl">
+    <nav className="flex justify-center items-center h-16 shadow-sm m-20 mt-10">
+      <ul className="flex items-center justify-center gap-10 text-xl">
         {Object.entries(ROUTES).map(([route, path]) => (
           <li key={route}>
             <Link href={path}>

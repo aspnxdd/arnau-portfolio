@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <main className="m-10">
+      <main>
         <h1 className="text-3xl  font-bold text-gray-200">
           Hi, I am <span className="text-sky-600">Arnau</span>.{" "}
           <p>I am a Full Stack Developer based in Spain.</p>
@@ -54,7 +53,6 @@ const Home: NextPage = () => {
           </li>
         </ul>
       </main>
-    </>
   );
 };
 

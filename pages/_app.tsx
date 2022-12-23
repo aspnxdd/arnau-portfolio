@@ -13,7 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/p.ico" />
       </Head>
       <Navbar />
-      <Component {...pageProps} />
+      <div className="flex items-center justify-center">
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }
