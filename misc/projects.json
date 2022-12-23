@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Hotel Simulator Solidity 🏨",
+    "order": 4,
+    "description": "This webapp aims to simulate what would be booking a room in an hotels portal through Solidity smart contracts deployed on an EVM blockchain like Matic (Mumbai) in this case. Hotel owners can create their hotel and customers can book rooms there",
+    "tags": ["NextJS (TypeScript)", "Solidity", "web3js", "Tailwind CSS"],
+    "uri": "https://hotel.nftfloorprice.art/",
+    "github": "https://github.com/aspnxdd/hotel-simulator-solidity/",
+    "image": "hotel.png"
+  },
+  {
+    "name": "Solana NFT Fragmenter 🧩",
+    "order": 1,
+    "description": "Solana Program to fragment NFTs into small NFTs, then do the opposite process and claim back the original NFT",
+    "tags": [
+      "NextJS (TypeScript)",
+      "Rust (Anchor)",
+      "solana/web3js",
+      "Tailwind CSS"
+    ],
+    "uri": "http://fragmentor-app.vercel.app/",
+    "github": "https://github.com/aspnxdd/fragmentor",
+    "image": "fragmentor.png"
+  },
+  {
+    "name": "Unhex 🎨",
+    "order": 3,
+    "description": "A NodeJS package to convert any RGB color to HEX, HSL color or viceversa.",
+    "tags": [
+      "NodeJS (Typescript)",
+      "Color conversion RGB-HSL-HEX",
+      "Turborepo"
+    ],
+    "uri": "https://unhex-docs.vercel.app/",
+    "github": "https://github.com/aspnxdd/unhex"
+  },
+  {
+    "name": "Solana RPC Flow ⚡",
+    "order": 2,
+    "description": "Solana RPC Flow is a tool for sending requests to Solana JSON-RPC endpoints without having to write code. It supports most standard RPC methods. It updates the URL and embeds your RPC endpoint and method call and params in the URL for easy sharing to any relevant parties.",
+    "tags": ["Vue (TypeScript)", "solana/web3js"],
+    "uri": "http://sol-rpc.vercel.app/",
+    "github": "https://github.com/aspnxdd/sol-rpc",
+    "image": "sol-rpc-flow.png"
+  },
+  {
+    "name": "Git Horse 🦄",
+    "order": 5,
+    "description": "git-horse is a git client for Desktop (WIP).",
+    "tags": ["Vue (TypeScript)", "Rust", "Tauri", "git2 crate"],
+    "github": "https://github.com/aspnxdd/git-horse",
+    "image": "git-horse.png"
+  }
+]
