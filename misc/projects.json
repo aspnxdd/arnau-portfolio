@@ -26,11 +26,7 @@
     "name": "Unhex 🎨",
     "order": 3,
     "description": "A NodeJS package to convert any RGB color to HEX, HSL color or viceversa.",
-    "tags": [
-      "NodeJS (Typescript)",
-      "Color conversion RGB-HSL-HEX",
-      "Turborepo"
-    ],
+    "tags": ["NodeJS (Typescript)", "Turborepo"],
     "uri": "https://unhex-docs.vercel.app/",
     "github": "https://github.com/aspnxdd/unhex"
   },

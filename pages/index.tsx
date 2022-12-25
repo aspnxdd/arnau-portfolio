@@ -7,7 +7,7 @@ const Home: NextPage = () => {
         Hi, I am <span className="text-sky-600">Arnau</span>.{" "}
         <p>I am a Full Stack Developer based in Spain.</p>
       </h1>
-      <h1 className="mt-10 w-[14ch] md:w-[15ch] animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white  text-3xl   text-white font-bold">
+      <h1 className="mt-10 w-[15ch] md:w-[15ch] animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white  text-2xl   text-white font-bold">
         Wanna know more?
       </h1>
       <p className="mt-10 text-xl text-gray-200 max-w-[60ch] leading-8">

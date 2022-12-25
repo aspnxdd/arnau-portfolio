@@ -20,7 +20,9 @@ const SelectedProject: FC<SelectedProjectProps> = ({ selectedProject }) => {
           unoptimized={true}
         />
       )}
-      <p className="text-lg max-w-[70ch] font-semibold">{selectedProject.description}</p>
+      <p className="text-lg max-w-[70ch] font-semibold">
+        {selectedProject.description}
+      </p>
       <div className="flex space-x-4">
         {selectedProject.github && (
           <a href={selectedProject.github} target="_blank" rel="noreferrer">
@@ -36,6 +38,19 @@ const SelectedProject: FC<SelectedProjectProps> = ({ selectedProject }) => {
             </button>
           </a>
         )}
+      </div>
+      <div>
+        <h3 className="text-xl font-bold my-4">Technologies used</h3>
+        <div className="flex flex-wrap gap-4">
+          {selectedProject.tags.map((tag) => (
+            <div
+              key={tag}
+              className="bg-sky-700 ease-in-out duration-200 text-white rounded-full p-2 px-5 font-bold"
+            >
+              {tag}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

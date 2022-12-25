@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/p.ico" />
       </Head>
       <Navbar />
-      <div className="flex items-center justify-center m-10 md:m-0">
+      <div className="flex items-center justify-center m-10">
         <Component {...pageProps} />
       </div>
     </>
