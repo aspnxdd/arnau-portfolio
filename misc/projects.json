@@ -5,7 +5,7 @@
     "description": "This webapp aims to simulate what would be booking a room in an hotels portal through Solidity smart contracts deployed on an EVM blockchain like Matic (Mumbai) in this case. Hotel owners can create their hotel and customers can book rooms there",
     "tags": ["NextJS (TypeScript)", "Solidity", "web3js", "Tailwind CSS"],
     "uri": "https://hotel.nftfloorprice.art/",
-    "github": "https://github.com/aspnxdd/hotel-simulator-solidity/",
+    "github": "https://github.com/aspnxdd/hotel-simulator-solidity",
     "image": "hotel.png"
   },
   {

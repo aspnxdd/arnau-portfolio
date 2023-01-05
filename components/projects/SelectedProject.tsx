@@ -2,6 +2,7 @@ import type { FC } from "react";
 import type { Project } from "@/misc/types";
 
 import Image from "next/image";
+import { BG_COLOR_MAPPER } from "@/styles/mappers";
 
 type SelectedProjectProps = {
   selectedProject: Project;
@@ -11,6 +12,20 @@ const SelectedProject: FC<SelectedProjectProps> = ({ selectedProject }) => {
   return (
     <div className="flex flex-col gap-4 my-10">
       <h2 className="text-3xl font-bold">{selectedProject.name}</h2>
+      <div className="flex gap-2">
+        <p className="p-1 ">{selectedProject.stars}⭐</p>
+        <p className="p-1 ">{selectedProject.forks}🔱</p>
+        <p
+          className={`rounded-xl p-1 px-2 ${
+            BG_COLOR_MAPPER[
+              (selectedProject.language?.toLowerCase() as keyof typeof BG_COLOR_MAPPER) ??
+                "default"
+            ]
+          }`}
+        >
+          {selectedProject.language}
+        </p>
+      </div>
       {selectedProject.image && (
         <Image
           src={`/${selectedProject.image}`}

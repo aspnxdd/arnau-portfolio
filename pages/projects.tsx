@@ -1,10 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
 import type { Project } from "@/misc/types";
 
-import Head from "next/head";
 import { useState } from "react";
 import projects from "@/misc/projects.json";
 import { ProjectList, SelectedProject } from "@/components/projects";
+import { useFetchGithubRepo } from "@/hooks";
 
 export const getStaticProps: GetStaticProps<{
   projects: Project[];
@@ -19,13 +19,16 @@ export const getStaticProps: GetStaticProps<{
 const Projects: NextPage<{
   projects: Project[];
 }> = ({ projects }) => {
-  const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
+  const projectsWithMetadata = useFetchGithubRepo(projects);
 
-  const sortedProjects = projects.sort((a, b) => a.order - b.order);
+  const [selectedProject, setSelectedProject] = useState<Project>(
+    projectsWithMetadata[0]
+  );
+
   return (
     <main>
       <ProjectList
-        projects={sortedProjects}
+        projects={projectsWithMetadata}
         setSelectedProject={setSelectedProject}
       />
       <SelectedProject selectedProject={selectedProject} />
