@@ -24,18 +24,23 @@ export function useFetchGithubRepo(projects: Project[]) {
     (async () => {
       setProjectsWithMetadata(
         await Promise.all(
-          projects
-            .sort((a, b) => a.order - b.order)
-            .map(async (project) => {
-              try {
-                const res = await fetchGithubRepo(
-                  parseRepoAndOwner(project.github)
-                );
-                return githubRepoDataMapper(project, res);
-              } catch (err) {
-                return githubRepoDataMapper(project);
-              }
-            })
+          await projects.reduce(async (acc, val) => {
+            const sorted = await acc;
+            let index = 0;
+            while (index < sorted.length && val.order < sorted[index].order) {
+              index++;
+            }
+            try {
+              const res = await fetchGithubRepo(parseRepoAndOwner(val.github));
+              const item = githubRepoDataMapper(val, res);
+              sorted.splice(index, 0, item);
+            } catch (err) {
+              const item = githubRepoDataMapper(val);
+              sorted.splice(index, 0, item);
+            }
+
+            return sorted;
+          }, Promise.resolve([] as Project[]))
         )
       );
     })();
